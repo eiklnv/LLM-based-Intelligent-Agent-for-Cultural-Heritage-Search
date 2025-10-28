@@ -1,0 +1,47 @@
+{
+  "engine": {
+    "model": {
+      "provider": "openai", 
+      "model_name": "Qwen3-32B",
+      "temperature": 0.6,
+      "max_tokens": 8192,
+      "timeout": 240,
+      "openai_api_base": "http://192.168.9.98:8000/Qwen3-32B",
+      "openai_api_key": "EMPTY"
+    },
+    "agent": {
+      "max_iterations": 5,
+      "max_execution_time": 3000,
+      "early_stopping_method": "generate",
+      "memory_type": "buffer_window",
+      "memory_window_size": 10
+    },
+    "search": {
+      "max_results_per_query": 10,
+      "min_confidence_threshold": 0.6,
+      "verification_rounds": 3,
+      "quality_threshold": 0.7,
+      "token_limit": 3000
+    },
+    "searxng": {
+      "base_url": "http://search.deepidp.net:8080",
+      "categories": ["general"],
+      "engines": ["bing", "google", "baidu", "sogou"],
+      "language": "zh-CN",
+      "safesearch": 1,
+      "timeout": 10
+    }
+  },
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "file": "logs/relicseek.log",
+    "max_file_size": "10MB",
+    "backup_count": 5
+  },
+  "cache": {
+    "enabled": true,
+    "ttl": 3600,
+    "max_size": 1000
+  }
+}

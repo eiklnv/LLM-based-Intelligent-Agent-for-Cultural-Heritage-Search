@@ -1,0 +1,56 @@
+{
+  "prompts": {
+    "query_analysis": {
+      "file": "query_analysis.txt",
+      "description": "分析用户查询意图和提取关键信息",
+      "input_variables": ["user_query"],
+      "output_format": "structured"
+    },
+    "strategy_planning": {
+      "file": "strategy_planning.txt", 
+      "description": "制定搜索策略和执行计划",
+      "input_variables": ["analysis_result"],
+      "output_format": "structured"
+    },
+    "reflection": {
+      "file": "reflection.txt",
+      "description": "反思和评估搜索结果质量",
+      "input_variables": ["current_results", "original_query"],
+      "output_format": "structured"
+    },
+    "conflict_resolution": {
+      "file": "conflict_resolution.txt",
+      "description": "解决不同信息源的冲突信息",
+      "input_variables": ["artifact_name", "source_a", "info_a", "source_b", "info_b"],
+      "output_format": "structured"
+    },
+    "quality_assessment": {
+      "file": "quality_assessment.txt",
+      "description": "评估文物信息质量和可信度",
+      "input_variables": ["artifact_info", "source_info"],
+      "output_format": "structured"
+    },
+    "information_fusion": {
+      "file": "information_fusion.txt",
+      "description": "融合多源信息并去重",
+      "input_variables": ["sources_info"],
+      "output_format": "structured"
+    },
+    "final_summary": {
+      "file": "final_summary.txt",
+      "description": "生成最终的文物信息摘要",
+      "input_variables": ["artifact_data", "search_context"],
+      "output_format": "natural"
+    }
+  },
+  "system_prompts": {
+    "agent_system": {
+      "file": "system/agent_system.txt",
+      "description": "智能体系统角色定义"
+    },
+    "search_expert": {
+      "file": "system/search_expert.txt", 
+      "description": "文物搜索专家角色定义"
+    }
+  }
+}

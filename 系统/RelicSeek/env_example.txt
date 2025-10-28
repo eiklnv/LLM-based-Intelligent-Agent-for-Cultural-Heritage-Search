@@ -1,0 +1,19 @@
+# RelicSeek 环境变量配置示例
+# 复制此文件为 .env 并填入实际值
+
+# OpenAI API 配置 (必需)
+OPENAI_API_KEY=your_openai_api_key_here
+
+# SearXNG 搜索服务配置 (可选)
+SEARXNG_URL=http://localhost:8888
+
+# 日志配置 (可选)
+LOG_LEVEL=INFO
+LOG_FILE=logs/relicseek.log
+
+# 缓存配置 (可选)
+CACHE_ENABLED=true
+CACHE_TTL=3600
+
+# 其他配置 (可选)
+PYTHONPATH=.
